@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vendor;
 use App\Http\Requests\StoreVendorRequest;
 use App\Http\Requests\UpdateVendorRequest;
+use App\Models\Store;
+use App\Models\Vendor;
 
 class VendorController extends Controller
 {
@@ -13,7 +14,9 @@ class VendorController extends Controller
      */
     public function index()
     {
-        //
+        $vendors = Vendor::all();
+
+        return response()->json(['data' => $vendors, 'message' => 'vendors sent successfully']);
     }
 
     /**
@@ -21,7 +24,13 @@ class VendorController extends Controller
      */
     public function store(StoreVendorRequest $request)
     {
-        //
+        $data = $request->validate([]);
+        $vendor = Store::Create($data);
+
+        return response()->json([
+            'vendors' => $vendor,
+            'message' => 'vendor creater successfylly',
+        ]);
     }
 
     /**

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone number');
             $table->string('fax number');
-            $table->foreignIdFor('Store', 'store_id')->constrained('stores')->cascadeOnDelete();
+            // $table->foreignIdFor('Store', 'store_id')->constrained('stores')->cascadeOnDelete();
             $table->timestamps();
         });
     }

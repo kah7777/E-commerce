@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('quantity');
             // $table->boolean('multi_components'); //will implelemt the idea of product components sooner
             // $table->foreignId('parents_id')->constrained('products')->cascadeOnDelete();
-            $table->foreignIdFor('Store', 'store_id')->constrained('stores')->cascadeOnDelete();
+            // $table->foreignIdFor('Store', 'store_id')->constrained('stores')->cascadeOnDelete();
             $table->timestamps();
         });
     }
