@@ -63,8 +63,8 @@ class StoreController extends Controller
      */
     public function destroy(Store $store)
     {
-        $delete = $store->delete();
-        if($delete == 1){
+        $deleted = $store->delete();
+        if($deleted == 1){
             return response()->json([
                 'message' => 'store was deleted'
             ]);

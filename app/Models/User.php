@@ -23,12 +23,6 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
-    public function address()
-    {
-        return $this->morphMany(Address::class, 'addressable');
-    }
-
     /**
      * The attributes that should be hidden for serialization.
      *
